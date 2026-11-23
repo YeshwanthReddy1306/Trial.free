@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yeshwanth Reddy — Ads + Funnels</title>
+<meta name="description" content="UGC-style ads, Meta campaigns and the Shopify pages behind them, by Yeshwanth Reddy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: confident, practical, a builder showing real work to a D2C founder
+   IDEA: an ad storyboard sheet: phone frames with the actual hook lines, then the funnel behind them
+   PICTURE: three phone frames in the hero, each playing its real script line as captions
+   COLOUR and TYPE: electric blue fields, white phones, coral accent; Archivo 800 headings + Inter body
+   LAYOUT: blue hero band with title and phones, then ads, after-the-click builds, AI builds, process, contact */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0f1117);--ink:light-dark(#121318,#eef0f6);--soft:light-dark(#4b5060,#a9afc0);
+--line:light-dark(#e3e5ec,#262a36);--card:light-dark(#f5f6fa,#171a23);
+--blue:#1f43ff;--blue2:light-dark(#1636d9,#3d5cff);--coral:#ff5a43;--onblue:#ffffff}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Archivo,Inter,sans-serif;line-height:1.08;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,5.2vw,52px);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(28px,3.6vw,38px);font-weight:800;letter-spacing:-.01em}
+h3{font-size:19px;font-weight:700}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(36px,5vw,72px) max(5vw,16px)}
+html{scroll-padding-top:72px;scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:var(--blue);color:var(--onblue)}
+nav .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;padding:12px max(5vw,16px)}
+nav .me{font-family:Archivo,Inter,sans-serif;font-weight:800;font-size:18px;margin-inline-end:auto;text-decoration:none}
+nav a.l{text-decoration:none;font-weight:500;font-size:15px;opacity:.9;padding:10px 0}
+nav a.l:hover{opacity:1;text-decoration:underline}
+nav a.cta{background:#fff;color:var(--blue);text-decoration:none;font-weight:600;font-size:15px;padding:10px 16px;border-radius:999px}
+
+/* hero */
+.hero{background:var(--blue);color:var(--onblue)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:center}
+.hero p.lede{font-size:17px;max-width:34em;margin-top:18px;opacity:.94}
+.hero .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;font-weight:600;text-decoration:none;font-size:16px}
+.btn.w{background:#fff;color:var(--blue)}
+.btn.o{border:1.5px solid rgba(255,255,255,.7);color:#fff}
+.btn:focus-visible,nav a:focus-visible,.card a:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:30px;font-size:14px;opacity:.9}
+.facts b{font-weight:600}
+
+.phones{display:flex;gap:clamp(10px,1.6vw,18px);justify-content:center;align-items:flex-end}
+.phone{flex:1 1 0;max-width:200px;aspect-ratio:9/18.5;background:#0d0e13;border-radius:28px;padding:7px;box-shadow:0 24px 48px -18px rgba(0,0,20,.55),inset 0 0 0 1.5px rgba(255,255,255,.18);position:relative}
+.phone:nth-child(2){transform:translateY(-22px)}
+.screen{position:absolute;inset:7px;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:14px 12px 18px}
+.screen::before{content:"";position:absolute;left:50%;top:9px;width:34%;height:5px;border-radius:4px;background:rgba(255,255,255,.25);transform:translateX(-50%)}
+.s1{background:linear-gradient(165deg,#7d5cff,#3a1f8f 62%,#1b0f45)}
+.s2{background:linear-gradient(165deg,#c9cdd6,#5c6270 60%,#22252c)}
+.s3{background:linear-gradient(165deg,#9ed7c4,#3f7f8c 60%,#163944)}
+.tag{position:absolute;top:22px;left:10px;font-size:11px;white-space:nowrap;font-weight:600;background:rgba(0,0,0,.4);color:#fff;padding:3px 8px;border-radius:999px}
+.cap{position:relative;font-family:Archivo,Inter,sans-serif;font-weight:800;color:#fff;font-size:clamp(12px,1.15vw,15px);line-height:1.2;text-shadow:0 2px 8px rgba(0,0,0,.45);min-height:4.8em;display:flex;align-items:flex-end}
+.cap span{background:var(--coral);padding:1px 4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.bar{position:relative;height:3px;background:rgba(255,255,255,.25);border-radius:3px;margin-top:10px;overflow:hidden}
+.bar i{position:absolute;inset:0;width:0;background:#fff;animation:fill 6s linear infinite}
+@keyframes fill{to{width:100%}}
+@media(prefers-reduced-motion:reduce){.bar i{animation:none;width:40%}}
+
+/* sections */
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px 32px;margin-bottom:28px}
+.head p{color:var(--soft);max-width:40em}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.card p{color:var(--soft);font-size:15.5px}
+.label{align-self:flex-start;font-size:13px;font-weight:600;padding:3px 10px;border-radius:999px;background:light-dark(#e8ecff,#1d2547);color:var(--blue2)}
+.label.c{background:light-dark(#ffe9e5,#3a1d18);color:light-dark(#c2361f,#ff8a78)}
+.card .go{margin-top:auto;padding-top:8px;font-weight:600;color:var(--blue2);text-decoration:none;font-size:15px;min-height:44px;display:inline-flex;align-items:center}
+.card .go:hover{text-decoration:underline}
+.quote{font-family:Archivo,Inter,sans-serif;font-weight:700;color:var(--ink);font-size:16px;line-height:1.35;border-inline-start:3px solid var(--coral);padding-inline-start:12px}
+.stack-row{font-size:13.5px;color:var(--soft)}
+.alt{background:var(--card)}
+.alt .card{background:var(--bg)}
+
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;counter-reset:s}
+.step{border-top:3px solid var(--blue);padding-top:18px}
+.step h3{display:flex;gap:10px;align-items:baseline}
+.step h3::before{counter-increment:s;content:counter(s);font-size:15px;color:#fff;background:var(--blue);width:28px;height:28px;border-radius:50%;display:inline-grid;place-items:center;flex:none}
+.step p{color:var(--soft);margin-top:8px}
+
+.about{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(24px,4vw,56px)}
+.about p{color:var(--soft);margin-top:14px;max-width:38em}
+.about ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.about li{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.about li span{color:var(--soft)}
+.about li b{text-align:end;font-weight:600}
+
+.contact{background:var(--blue);color:#fff}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:center}
+.contact p{opacity:.92;margin-top:14px;max-width:36em}
+.links{display:grid;gap:10px}
+.links a,.links div{display:flex;justify-content:space-between;gap:12px;align-items:center;background:rgba(255,255,255,.1);border-radius:14px;padding:14px 16px;text-decoration:none;min-height:48px}
+.links a:hover{background:rgba(255,255,255,.18)}
+.links small{opacity:.8;font-size:14px;overflow-wrap:anywhere;text-align:end}
+footer{padding:22px max(5vw,16px);font-size:14px;color:var(--soft)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+
+@media(max-width:900px){.grid,.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.hero .wrap,.about,.contact .wrap{grid-template-columns:minmax(0,1fr)}.phones{width:100%;max-width:460px;margin:8px auto 0}}
+@media(max-width:600px){.grid,.steps{grid-template-columns:minmax(0,1fr)}nav a.l{display:none}.phone:nth-child(2){transform:translateY(-12px)}.cap{font-size:12px}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="me" href="#top">Yeshwanth Reddy</a>
+    <a class="l" href="#ads">Ads</a>
+    <a class="l" href="#funnel">After the click</a>
+    <a class="l" href="#ai">AI builds</a>
+    <a class="l" href="#how">How I work</a>
+    <a class="cta" href="#contact">Free ad teardown</a>
+  </div>
+</nav>
+
+<header class="hero band" id="top">
+  <div class="wrap">
+    <div>
+      <h1>I make the ad, then build what happens after the click.</h1>
+      <p class="lede">UGC-style video ads and Meta campaigns for Shopify brands, plus the landing pages, bundles and automations that turn the click into an order. I'm a computer science engineer, so I build the funnel myself instead of handing it off.</p>
+      <div class="btns">
+        <a class="btn w" href="#contact">Get a free teardown of your ads</a>
+        <a class="btn o" href="#ads">See the work</a>
+      </div>
+      <div class="facts">
+        <div><b>UGC ads</b> · scripts, hooks, AI production</div>
+        <div><b>Meta Ads</b> · testing and management</div>
+        <div><b>Funnels</b> · Shopify pages, bundles, bots</div>
+      </div>
+    </div>
+    <div class="phones" aria-label="Hook lines from three of my ads">
+      <div class="phone"><div class="screen s1"><span class="tag">Activewear</span><div class="cap" data-lines='["The workout is 10x better when you like your outfit.","Survives heavy leg day.","Walk straight into the café after."]'><span></span></div><div class="bar"><i></i></div></div></div>
+      <div class="phone"><div class="screen s2"><span class="tag">Auto parts</span><div class="cap" data-lines='["Build your bundle. Unlock 15% off.","One-click Shopify checkout.","3 hooks per concept, every month."]'><span></span></div><div class="bar"><i></i></div></div></div>
+      <div class="phone"><div class="screen s3"><span class="tag">Smart feeder</span><div class="cap" data-lines='["I didn&#39;t know that bird lived here.","The feeder names every visitor.","You just look at your phone."]'><span></span></div><div class="bar"><i></i></div></div></div>
+    </div>
+  </div>
+</header>
+
+<section class="band" id="ads">
+  <div class="wrap">
+    <div class="head">
+      <h2>Ads</h2>
+      <p>Spec ads and concepts I made for real brands to show what I'd run for them. None of these brands are clients yet; each one is labelled.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="label">Spec ad</span>
+        <h3>Activewear UGC ad: Gym+Coffee style</h3>
+        <p class="quote">"Honestly, the workout is always 10 times better when you actually like your outfit."</p>
+        <p>A creator-style ad that hooks on a feeling, shows the product surviving leg day, answers the "too bulky" objection, and ends on scarcity.</p>
+        <a class="go" href="https://drive.google.com/file/d/1CqqRoVn19Vm-Z_047WLyW6jY9dcOtS7I/view">Watch the ad →</a>
+      </article>
+      <article class="card">
+        <span class="label c">Unofficial concept</span>
+        <h3>Smart bird feeder: "I didn't know that bird lived here."</h3>
+        <p>A 30-second handheld ad built on one moment: the phone buzzes and the bird is already identified. It sells the surprise of your own backyard, not camera specs. Delivered with three test variants.</p>
+        <a class="go" href="https://drive.google.com/file/d/121zdo4TI1iF1bZHNmp-YZMa5tJ8bR4uc/view">Watch the clip →</a>
+      </article>
+      <article class="card">
+        <span class="label c">Pitch concept</span>
+        <h3>Monthly ad engine for an auto-accessories brand</h3>
+        <p>A pitch for 10 white-label vertical ads a month, each concept with three scroll-stopping hooks, so media buyers can keep testing fresh creative without fatigue.</p>
+        <a class="go" href="https://drive.google.com/file/d/1YV8hb17THCtYAlKJephpH6jm3VZQvA7H/view">Watch the walkthrough →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="funnel">
+  <div class="wrap">
+    <div class="head">
+      <h2>After the click</h2>
+      <p>An ad only works if the page it lands on works. These are pages, audits and tools I built.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="label c">Pitch concept</span>
+        <h3>Shopify bundle builder</h3>
+        <p>Customers pick a set of matching parts, unlock a bundle discount and check out in one click. Built to raise order value on a new product launch.</p>
+        <p class="stack-row">Shopify cart logic · interactive configurator · fitment alerts</p>
+        <a class="go" href="https://drive.google.com/file/d/1YV8hb17THCtYAlKJephpH6jm3VZQvA7H/view">See it working →</a>
+      </article>
+      <article class="card">
+        <span class="label">Audit + live demo</span>
+        <h3>School website audit and redesign</h3>
+        <p class="quote">The homepage still said "Admissions open for 2024-25" in 2026.</p>
+        <p>Found 1 critical issue, 5 high-impact fixes and 4 medium fixes, then rebuilt the site with a proper admissions section and an apply button.</p>
+        <a class="go" href="https://svisdemo.niat.tech/">Open the demo →</a>
+      </article>
+      <article class="card">
+        <span class="label">Live demo</span>
+        <h3>School site with an AI assistant</h3>
+        <p>A redesigned school website with "Bright", a multilingual AI chatbot that answers parents' admissions questions any time of day.</p>
+        <a class="go" href="https://demoweb12.niat.tech/">Open the demo →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="ai">
+  <div class="wrap">
+    <div class="head">
+      <h2>AI and automation builds</h2>
+      <p>The engineering behind the ads: I write the code for chatbots, automations and data tools myself.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <h3>RAG PDF chatbot</h3>
+        <p>Upload a PDF and ask questions about it. Splits documents into chunks, embeds them and retrieves answers with conversation memory.</p>
+        <p class="stack-row">React · FastAPI · LangChain · ChromaDB · OpenAI</p>
+        <a class="go" href="https://yeshwanthreddy1306.github.io/RAG-based-PDF-chatbot/">Open project →</a>
+      </article>
+      <article class="card">
+        <h3>Churn simulator with explainable AI</h3>
+        <p>A churn prediction model trained in Python, with a live dashboard in the browser that explains why each customer is at risk.</p>
+        <p class="stack-row">Python · scikit-learn · XAI dashboard</p>
+        <a class="go" href="https://yeshwanthreddy1306.github.io/linkedIn-churn-simulator/">Open project →</a>
+      </article>
+      <article class="card">
+        <h3>AI resume summarizer</h3>
+        <p>Reads a PDF resume, compares it against a job description and returns an ATS score, skill gaps and fixes. Ships as a web app and a CLI.</p>
+        <p class="stack-row">Python · JavaScript · Claude API</p>
+        <a class="go" href="https://yeshwanthreddy1306.github.io/AI-Resume-Summarizer/">Open project →</a>
+      </article>
+      <article class="card">
+        <h3>Auto-posting workflow</h3>
+        <p>An n8n workflow that reads a progress log from Google Sheets and publishes posts to LinkedIn and X automatically.</p>
+        <p class="stack-row">n8n · Google Sheets · LinkedIn and X APIs</p>
+      </article>
+      <article class="card">
+        <h3>WhatsApp clinic bot</h3>
+        <p>An FAQ and booking assistant for an eye clinic, built as a demo so patients get answers without waiting on a call.</p>
+        <p class="stack-row">Chatbot flows · FAQ automation</p>
+      </article>
+      <article class="card">
+        <h3>Bachat</h3>
+        <p>An AI-powered money-literacy web app, built for a competition, that explains everyday finance in plain language.</p>
+        <a class="go" href="https://daddyyy.niat.tech/">Open project →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="how">
+  <div class="wrap">
+    <div class="head"><h2>How I work with a brand</h2></div>
+    <div class="steps">
+      <div class="step"><h3>Teardown</h3><p>I go through your current ads and landing page and send you a short breakdown: where the hook loses people, what the page makes hard, and what I'd test first. Free, and you keep it.</p></div>
+      <div class="step"><h3>Test ads</h3><p>I write and produce UGC-style concepts with three hooks each, then launch and read them in Meta Ads so the winners get the budget.</p></div>
+      <div class="step"><h3>Fix the funnel</h3><p>If the clicks come but orders don't, I build the fix: a sharper landing page, a bundle, a quiz or an automation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap about">
+    <div>
+      <h2>About me</h2>
+      <p>I'm Yeshwanth, a computer science engineering student at NIAT in Hyderabad and part of its BRAVE entrepreneurship program, where I build AI tools and websites for real businesses and pitch them. I work with brands in the US and elsewhere, on your time zone.</p>
+      <p>I'll tell you what I've done and what I haven't. Every spec ad here is labelled, and I don't put numbers on this page that I can't show you.</p>
+    </div>
+    <ul>
+      <li><span>Degree</span><b>B.Tech CS, NIAT · SGPA 9.22</b></li>
+      <li><span>Based in</span><b>Hyderabad, India</b></li>
+      <li><span>Works with</span><b>US, UK, Canada, UAE brands</b></li>
+      <li><span>Languages</span><b>English, Hindi, Telugu</b></li>
+      <li><span>Code</span><b>Python, JavaScript, React, FastAPI</b></li>
+    </ul>
+  </div>
+</section>
+
+<section class="contact band" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Want a free teardown of your ads?</h2>
+      <p>Send me your brand name or a link to one of your ads. Within two days I'll send a short breakdown of what's working, what isn't, and the first thing I'd test.</p>
+    </div>
+    <div class="links">
+      <a href="mailto:reddyyeshwanth691@gmail.com?subject=Ad%20teardown"><span>Email</span><small>reddyyeshwanth691@gmail.com</small></a>
+      <a href="https://linkedin.com/in/yeshwanth-reddy-chintala-b3528b366"><span>LinkedIn</span><small>Yeshwanth Reddy Chintala</small></a>
+      <a href="https://github.com/YeshwanthReddy1306"><span>GitHub</span><small>YeshwanthReddy1306</small></a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Yeshwanth Reddy</span><span>Ads, Meta campaigns and funnels for D2C brands</span></div></footer>
+
+<script>
+{
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const caps = [...document.querySelectorAll('.cap')];
+  caps.forEach((cap, n) => {
+    const lines = JSON.parse(cap.dataset.lines);
+    const span = cap.querySelector('span');
+    let i = 0;
+    span.textContent = lines[0];
+    if (reduce) return;
+    setTimeout(() => {
+      setInterval(() => { i = (i + 1) % lines.length; span.textContent = lines[i]; }, 2000);
+    }, n * 400);
+  });
+}
+</script>
+</body>
+</html>
